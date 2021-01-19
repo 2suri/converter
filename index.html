@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>converter</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        .main {
+            height: 100vh;
+            width: 100%;
+            background-color: burlywood;
+        }
+
+        .head {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: 100px;
+            padding-bottom: 30px;
+        }
+
+        .content {
+            margin-top: 100px;
+            height: 200px;
+            width: 400px;
+            background-color: lightsteelblue;
+            margin: auto;
+            padding: 10px 20px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="head">
+            <input type="number" id="num">
+            &nbsp;&nbsp;
+            <span>rupees To</span>
+            &nbsp;&nbsp;
+            <select id="sel">
+                <option>american dollar</option>
+                <option>pound sterling</option>
+                <option>japnese yen</option>
+                <option>chinese yuan</option>
+                <option>russian ruble</option>
+                <option>pakistani rupee</option>
+            </select>
+            &nbsp;&nbsp;
+        </div>
+        <div class="b" style="display: flex;justify-content: center; margin-bottom: 30px;">
+            <button class="btn" id="btn1"> Convert</button>
+        </div>
+        <div class="content" id="cont">
+            <h2>sdfhkj</h2>
+        </div>
+    </div>
+    
+    <script>
+    
+        const num = document.getElementById('num');
+        const sel = document.getElementById('sel');
+        const btn1 = document.getElementById('btn1');
+        const cont = document.getElementById('cont');
+        
+        btn1.addEventListener('click' , () => {
+           const numval = num.value;
+            const selval = sel.options[sel.selectedIndex].value;
+            
+            if(selval == 'american dollar'){
+            cont.innerHTML =`1 rupee equals to ${(numval*.014)} american dollar `;
+                console.log(numval*.014);
+            }
+            else if(selval == 'pound sterling'){
+                   cont.innerHTML =`1 rupee equals to ${(numval*.010)} pound sterling `;
+            }
+            else if(selval == 'japnese yen'){
+                    cont.innerHTML =`1 rupee equals to ${(numval*1.42)} japnese yen `;
+            }
+            else if(selval == 'chinese yuan'){
+                    cont.innerHTML =`1 rupee equals to ${(numval*.089)} chinese yuan `;
+            }
+            else if(selval == 'russian ruble'){
+                    cont.innerHTML =`1 rupee equals to ${(numval*1.01)} russian ruble `;
+            }
+            else if(selval == 'pakistani rupee'){
+                    cont.innerHTML =`1 rupee equals to ${(numval*2.20)} pakistani rupee`;
+            }
+             
+        })
+
+    </script>
+    
+</body>
+
+</html>
